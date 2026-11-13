@@ -1,0 +1,61 @@
+{# Keep the Material previous/next topic navigation. #}
+<footer class="md-footer">
+  {% if "navigation.footer" in features and page and (page.previous_page or page.next_page) %}
+    {% if page.meta and page.meta.hide %}
+      {% set hidden = "hidden" if "footer" in page.meta.hide %}
+    {% endif %}
+    <nav class="md-footer__inner md-grid" aria-label="{{ lang.t('footer') }}" {{ hidden }}>
+      {% if page.previous_page %}
+        {% set direction = lang.t("footer.previous") %}
+        <a href="{{ page.previous_page.url | url }}" class="md-footer__link md-footer__link--prev" aria-label="{{ direction }}: {{ page.previous_page.title | e }}">
+          <div class="md-footer__button md-icon">
+            {% set icon = config.theme.icon.previous or "material/arrow-left" %}
+            {% include ".icons/" ~ icon ~ ".svg" %}
+          </div>
+          <div class="md-footer__title"><span class="md-footer__direction">{{ direction }}</span><div class="md-ellipsis">{{ page.previous_page.title }}</div></div>
+        </a>
+      {% endif %}
+      {% if page.next_page %}
+        {% set direction = lang.t("footer.next") %}
+        <a href="{{ page.next_page.url | url }}" class="md-footer__link md-footer__link--next" aria-label="{{ direction }}: {{ page.next_page.title | e }}">
+          <div class="md-footer__title"><span class="md-footer__direction">{{ direction }}</span><div class="md-ellipsis">{{ page.next_page.title }}</div></div>
+          <div class="md-footer__button md-icon">
+            {% set icon = config.theme.icon.next or "material/arrow-right" %}
+            {% include ".icons/" ~ icon ~ ".svg" %}
+          </div>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+
+  {% set russian = page and page.file and page.file.src_path.startswith("ru/") %}
+  {% set root = "ru/" if russian else "" %}
+  <div class="rheic-footer-sitemap">
+    <div class="md-grid rheic-footer-grid">
+      <div class="rheic-footer-brand">
+        <a class="rheic-footer-logo" href="{{ (root ~ 'index.html') | url }}"><img src="{{ "assets/rheic-shark.png" | url }}" alt=""> <span>Rheic</span></a>
+        {% if russian %}
+          <p>Локальные sandbox для coding-агентов.</p>
+          <span class="rheic-footer-status">Pre-alpha · локальная разработка</span>
+        {% else %}
+          <p>Local sandboxes for coding agents.</p>
+          <span class="rheic-footer-status">Pre-alpha · local development</span>
+        {% endif %}
+      </div>
+      {% if russian %}
+        <div class="rheic-footer-column"><h2>Начать</h2><a href="{{ (root ~ 'requirements/') | url }}">Системные требования</a><a href="{{ (root ~ 'quickstart/') | url }}">Быстрый старт</a><a href="{{ (root ~ 'agents/') | url }}">Агенты</a></div>
+        <div class="rheic-footer-column"><h2>Настроить</h2><a href="{{ (root ~ 'workspaces/') | url }}">Workspace и файлы</a><a href="{{ (root ~ 'networking/') | url }}">Сеть и порты</a><a href="{{ (root ~ 'credentials/') | url }}">Credentials</a><a href="{{ (root ~ 'kits/') | url }}">Kits</a></div>
+        <div class="rheic-footer-column"><h2>Использовать</h2><a href="{{ (root ~ 'docker/') | url }}">Docker</a><a href="{{ (root ~ 'tui/') | url }}">Терминальная панель</a><a href="{{ (root ~ 'troubleshooting/') | url }}">Решение проблем</a><a href="{{ (root ~ 'settings/') | url }}">Настройки</a></div>
+        <div class="rheic-footer-column"><h2>Справочник</h2><a href="{{ (root ~ 'cli/') | url }}">CLI</a><a href="{{ (root ~ 'architecture/') | url }}">Архитектура</a><a href="{{ (root ~ 'security/') | url }}">Безопасность</a></div>
+      {% else %}
+        <div class="rheic-footer-column"><h2>Get started</h2><a href="{{ (root ~ 'requirements/') | url }}">System requirements</a><a href="{{ (root ~ 'quickstart/') | url }}">Quick start</a><a href="{{ (root ~ 'agents/') | url }}">Agents</a></div>
+        <div class="rheic-footer-column"><h2>Build</h2><a href="{{ (root ~ 'workspaces/') | url }}">Workspaces and files</a><a href="{{ (root ~ 'networking/') | url }}">Network and ports</a><a href="{{ (root ~ 'credentials/') | url }}">Credentials</a><a href="{{ (root ~ 'kits/') | url }}">Kits</a></div>
+        <div class="rheic-footer-column"><h2>Operate</h2><a href="{{ (root ~ 'docker/') | url }}">Docker</a><a href="{{ (root ~ 'tui/') | url }}">Terminal dashboard</a><a href="{{ (root ~ 'troubleshooting/') | url }}">Troubleshooting</a><a href="{{ (root ~ 'settings/') | url }}">Settings</a></div>
+        <div class="rheic-footer-column"><h2>Reference</h2><a href="{{ (root ~ 'cli/') | url }}">CLI</a><a href="{{ (root ~ 'architecture/') | url }}">Architecture</a><a href="{{ (root ~ 'security/') | url }}">Security</a></div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="md-footer-meta md-typeset"><div class="md-footer-meta__inner md-grid">
+    <div class="rheic-footer-copyright">© 2026 Rheic contributors · {% if russian %}Документация на русском и английском{% else %}Documentation in English and Russian{% endif %}</div>
+  </div></div>
+</footer>
