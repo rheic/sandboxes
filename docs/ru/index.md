@@ -86,7 +86,7 @@ sandboxesd --state ~/.sandboxes \\
 </section>
 
 <section class="home-section" aria-labelledby="faq-title">
-<div class="home-section-heading"><div><p class="home-kicker">Перед началом</p><h2 id="faq-title">Частые вопросы</h2></div></div>
+<div class="home-section-heading"><div><p class="home-kicker">Перед началом</p><h2 id="faq-title">Частые вопросы</h2></div><a href="faq/">Все ответы →</a></div>
 <div class="home-faq">
 <details><summary>Быстрый старт запускает VM?</summary><p>Нет. Он запускает daemon в режиме state-only, чтобы проверить локальную control plane. Для VM нужны дополнительные платформенные компоненты из раздела <a href="requirements/">Системные требования</a>.</p></details>
 <details><summary>Можно ли запустить coding-агента внутри sandbox?</summary><p>CLI и runtime содержат agent и exec-пути, а ограниченная VM-backed lifecycle acceptance прошла на macOS ARM64. Полная интерактивная работа каждого агента и платформы не прошла acceptance. Смотрите <a href="agents/">руководство по агентам</a> и <a href="requirements/">статус платформ</a>.</p></details>

@@ -27,6 +27,7 @@ nav:
       - Settings: en/settings.md
       - Architecture: en/architecture.md
       - Security: en/security.md
+      - FAQ: en/faq.md
 
 plugins:
   - search
@@ -67,6 +68,7 @@ plugins:
                 - Настройки: ru/settings.md
                 - Архитектура: ru/architecture.md
                 - Безопасность: ru/security.md
+                - Частые вопросы: ru/faq.md
 
 theme:
   name: material
