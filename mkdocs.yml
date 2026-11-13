@@ -1,0 +1,127 @@
+site_name: Rheic
+site_url: https://rheic.github.io/sandboxes/
+site_description: Local sandboxes for coding agents. Explore guides, runtime boundaries, and command reference.
+site_dir: site
+
+docs_dir: docs
+
+copyright: Copyright © 2026 Rheic contributors
+
+nav:
+  - Start here:
+      - Overview: en/index.md
+      - System requirements: en/requirements.md
+      - Quick start: en/quickstart.md
+  - Build:
+      - Agents: en/agents.md
+      - Workspaces and files: en/workspaces.md
+      - Network and ports: en/networking.md
+      - Credentials and sign-in: en/credentials.md
+      - Kits: en/kits.md
+  - Operate:
+      - Docker: en/docker.md
+      - Terminal dashboard: en/tui.md
+      - Troubleshooting: en/troubleshooting.md
+  - Reference:
+      - CLI: en/cli.md
+      - Settings: en/settings.md
+      - Architecture: en/architecture.md
+      - Security: en/security.md
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      reconfigure_material: true
+      reconfigure_search: true
+      fallback_to_default: false
+      languages:
+        - locale: en
+          name: English
+          default: true
+          build: true
+          site_name: Rheic
+          site_description: Local sandboxes for coding agents. Explore guides, runtime boundaries, and command reference.
+        - locale: ru
+          name: Русский
+          build: true
+          site_name: Rheic
+          site_description: "Документация Rheic: локальные sandbox для coding-агентов, руководства, статус платформ и границы безопасности."
+          nav:
+            - Начать:
+                - Обзор: ru/index.md
+                - Системные требования: ru/requirements.md
+                - Быстрый старт: ru/quickstart.md
+            - Настроить:
+                - Агенты: ru/agents.md
+                - Workspace и файлы: ru/workspaces.md
+                - Сеть и порты: ru/networking.md
+                - Credentials и вход: ru/credentials.md
+                - Kits: ru/kits.md
+            - Использовать:
+                - Docker: ru/docker.md
+                - Терминальная панель: ru/tui.md
+                - Решение проблем: ru/troubleshooting.md
+            - Справочник:
+                - CLI: ru/cli.md
+                - Настройки: ru/settings.md
+                - Архитектура: ru/architecture.md
+                - Безопасность: ru/security.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/rheic-shark.png
+  favicon: assets/rheic-mark.svg
+  language: en
+  font: false
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/rheic.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
