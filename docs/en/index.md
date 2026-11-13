@@ -86,7 +86,7 @@ sandboxesd --state ~/.sandboxes \\
 </section>
 
 <section class="home-section" aria-labelledby="faq-title">
-<div class="home-section-heading"><div><p class="home-kicker">Before you begin</p><h2 id="faq-title">Common questions</h2></div></div>
+<div class="home-section-heading"><div><p class="home-kicker">Before you begin</p><h2 id="faq-title">Common questions</h2></div><a href="faq/">Read all FAQs →</a></div>
 <div class="home-faq">
 <details><summary>Does the quick start launch a VM?</summary><p>No. It starts the daemon in state-only mode so you can inspect the local control plane. VM setup requires additional platform-specific components described in <a href="requirements/">System requirements</a>.</p></details>
 <details><summary>Can I run a coding agent inside the sandbox?</summary><p>The CLI and runtime contain agent and exec paths, and limited VM-backed lifecycle acceptance passed on macOS ARM64. Full interactive workflows for every agent and platform have not passed acceptance. Check the <a href="agents/">agent guide</a> and <a href="requirements/">platform status</a>.</p></details>
